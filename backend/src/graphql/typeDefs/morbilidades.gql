@@ -1,0 +1,19 @@
+type Query {
+  getMorbilidad(_id: ID): Morbilidad
+  getMorbilidades(sortby: [SortBy]): [Morbilidad]
+}
+
+type Mutation {
+  createMorbilidad(input: MorbilidadInput): Boolean
+  updateMorbilidad(_id: ID, input: MorbilidadInput): Boolean
+  deleteMorbilidad(_id: ID): Boolean
+}
+
+type Morbilidad {
+  _id: ID
+  nombre: String
+}
+
+input MorbilidadInput {
+  nombre: String
+}

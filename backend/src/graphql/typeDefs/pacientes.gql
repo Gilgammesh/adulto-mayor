@@ -1,0 +1,57 @@
+type Query {
+  getPaciente(_id: ID): Paciente
+  getPacientes(sortby: [SortBy]): [Paciente]
+}
+
+type Mutation {
+  createPaciente(input: PacienteInput): PacienteResponse
+  updatePaciente(_id: ID, input: PacienteInput): Boolean
+  deletePaciente(_id: ID): Boolean
+  createObservacion(descripcion: String): Boolean
+}
+
+type Paciente {
+  _id: ID
+  dni: String
+  nombres: String
+  edad: Int
+  direccion: String
+  provincia: String
+  distrito: String
+  seguro: String
+  celular: String
+  morbilidades: [String]
+  latitud: Float
+  longitud: Float
+  estado: String
+  celulares: [String]
+  contacto: String
+  observaciones: [Observaciones]
+}
+
+type Observaciones {
+  _id: ID
+  descripcion: String
+}
+
+type PacienteResponse {
+  estado: Boolean
+  msg: String
+}
+
+input PacienteInput {
+  dni: String
+  nombres: String
+  edad: Int
+  direccion: String
+  provincia: String
+  distrito: String
+  seguro: String
+  celular: String
+  morbilidades: [String]
+  latitud: Float
+  longitud: Float
+  estado: String
+  celulares: [String]
+  contacto: String
+}

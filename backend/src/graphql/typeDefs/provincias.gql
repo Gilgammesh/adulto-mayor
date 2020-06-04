@@ -1,0 +1,23 @@
+type Query {
+  getProvincia(_id: ID): Provincia
+  getProvincias(sortby: [SortBy]): [Provincia]
+}
+
+type Mutation {
+  createProvincia(input: ProvinciaInput): Boolean
+  updateProvincia(_id: ID, input: ProvinciaInput): Boolean
+  deleteProvincia(_id: ID): Boolean
+}
+
+type Provincia {
+  _id: ID
+  departamento: String
+  nombre: String
+  poligono: [[[Float]]]
+}
+
+input ProvinciaInput {
+  departamento: String
+  nombre: String
+  poligono: [[[Float]]]
+}

@@ -1,0 +1,29 @@
+type Query {
+  getDistrito(_id: ID): Distrito
+  getDistritos(filter: DistritoFilter, sortby: [SortBy]): [Distrito]
+}
+
+type Mutation {
+  createDistrito(input: DistritoInput): Boolean
+  updateDistrito(_id: ID, input: DistritoInput): Boolean
+  deleteDistrito(_id: ID): Boolean
+}
+
+type Distrito {
+  _id: ID
+  departamento: String
+  provincia: String
+  nombre: String
+  poligono: [[[Float]]]
+}
+
+input DistritoFilter {
+  provincia: String
+}
+
+input DistritoInput {
+  departamento: String
+  provincia: String
+  nombre: String
+  poligono: [[[Float]]]
+}

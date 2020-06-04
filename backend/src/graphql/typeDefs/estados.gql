@@ -1,0 +1,21 @@
+type Query {
+  getEstado(_id: ID): Estado
+  getEstados(sortby: [SortBy]): [Estado]
+}
+
+type Mutation {
+  createEstado(input: EstadoInput): Boolean
+  updateEstado(_id: ID, input: EstadoInput): Boolean
+  deleteEstado(_id: ID): Boolean
+}
+
+type Estado {
+  _id: ID
+  nombre: String
+  url_icon: String
+}
+
+input EstadoInput {
+  nombre: String
+  url_icon: String
+}

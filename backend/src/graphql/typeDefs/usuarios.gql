@@ -1,0 +1,30 @@
+type Query {
+  getUsuario(_id: ID): Usuario
+  getUsuarios(sortby: [SortBy]): [Usuario]
+}
+
+type Mutation {
+  createUsuario(input: UsuarioInput): Boolean
+  updateUsuario(_id: ID, input: UsuarioInput): Boolean
+  deleteUsuario(_id: ID): Boolean
+  loginUsuario(input: UsuarioInput): UsuarioLogin
+  validateUsuario(token: String): Boolean
+}
+
+type UsuarioLogin {
+  estado: Boolean
+  msg: String
+  token: String
+  usuario: Usuario
+}
+
+type Usuario {
+  _id: ID
+  user: String
+  password: String
+}
+
+input UsuarioInput {
+  user: String
+  password: String
+}
