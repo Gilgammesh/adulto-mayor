@@ -26,7 +26,7 @@ type Paciente {
   estado: String
   celulares: [String]
   contacto: String
-  observaciones: [Observaciones]
+  observaciones: [Observaciones]  
 }
 
 type Observaciones {

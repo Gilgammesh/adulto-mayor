@@ -14,6 +14,10 @@ const Index = () => {
     variables: {
       sortby: [
         {
+          field: "createdAt",
+          direction: "DESC",
+        },
+        {
           field: "provincia",
           direction: "ASC",
         },
