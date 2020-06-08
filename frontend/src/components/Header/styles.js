@@ -14,11 +14,24 @@ export const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     marginLeft: "15px",
-    color: "#333",
+    color: "#2b6e9b",
     fontWeight: "500",
-    fontSize: 20
+    fontSize: 20,    
+    [theme.breakpoints.down("sm")]: {
+      marginRight: 16
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 14,
+    },
   },
   toolBarPrimary: {
     background: "linear-gradient(45deg, #eaeaea 30%, #eeeeee 90%)",
-  },  
+  },
+  button: {
+    marginLeft: 30,
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: 0,
+      maxWidth: 50
+    },
+  },
 }));

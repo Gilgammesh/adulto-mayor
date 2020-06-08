@@ -8,5 +8,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   container: {
     padding: theme.spacing(2)
+  },
+  button: {
+    marginBottom: 10
   }
 }));

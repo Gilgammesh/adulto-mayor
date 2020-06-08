@@ -1,5 +1,9 @@
 import React from "react";
-import { Grid, Paper } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
+import { Grid, Paper, Button } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import { teal } from "@material-ui/core/colors";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import MUIDataTable from "mui-datatables";
 import { useStyles } from "./styles";
 import { useQuery } from "react-apollo";
@@ -8,6 +12,7 @@ import { GET_PACIENTES } from "./Querys";
 import Loading from "../../Loading/Index";
 
 const Index = () => {
+  const history = useHistory();
   const classes = useStyles();
 
   const { loading, data } = useQuery(GET_PACIENTES, {
@@ -34,8 +39,24 @@ const Index = () => {
   });
 
   if (loading) {
-    return <Loading />;
+    return (
+      <Grid item xs={12}>
+        <Paper elevation={3}>
+          <Loading />
+        </Paper>
+      </Grid>
+    );
   }
+
+  const ColorButton = withStyles((theme) => ({
+    root: {
+      color: theme.palette.getContrastText(teal["100"]),
+      backgroundColor: teal["100"],
+      "&:hover": {
+        backgroundColor: teal["200"],
+      },
+    },
+  }))(Button);
 
   const columns = [
     {
@@ -133,10 +154,24 @@ const Index = () => {
     },
   };
 
+  const onClickNew = () => {
+    history.push("/nuevo_paciente");
+  };
+
   return (
     <Grid item xs={12}>
       <Paper elevation={3}>
-        <div className={classes.container}>
+        <div id="divTablePadron" className={classes.container}>
+          <ColorButton
+            variant="contained"
+            color="primary"
+            type="submit"
+            className={classes.button}
+            startIcon={<PersonAddIcon />}
+            onClick={onClickNew}
+          >
+            Nuevo Paciente
+          </ColorButton>
           <MUIDataTable
             title="Padrón de Adultos Mayores en la Región San Martín"
             data={data.getPacientes}

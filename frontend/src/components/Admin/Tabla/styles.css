@@ -1,8 +1,12 @@
 thead tr th {
-    background: linear-gradient(45deg, #00CCC1 30%, #00CCC1 90%) !important;
-    padding: 8px !important;
-    color: #333 !important;
+  background: linear-gradient(45deg, #598db2 30%, #598db2 90%) !important;
+  padding: 8px !important;
+  color: whitesmoke !important;
 }
 tbody tr td {
-    padding: 8px !important;
+  padding: 8px !important;
+}
+#divTablePadron .MuiTypography-h6 {
+  font-size: 16px;
+  color: #245b7f !important;
 }

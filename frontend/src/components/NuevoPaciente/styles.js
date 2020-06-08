@@ -20,4 +20,7 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
+  containerForm: {
+    padding: theme.spacing(2),
+  },
 }));

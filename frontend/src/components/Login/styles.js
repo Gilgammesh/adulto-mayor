@@ -53,6 +53,12 @@ export const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
   },
+  box2_: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
   textLogin: {
     textAlign: "center",
     fontSize: 20,
@@ -76,5 +82,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginTop: 40,
+  },
+  progress: {
+    color: "#ffffff",
   },
 }));
