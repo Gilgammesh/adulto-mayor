@@ -13,11 +13,17 @@ type Provincia {
   _id: ID
   departamento: String
   nombre: String
+  codigo: String
+  latitud: Float
+  longitud: Float
   poligono: [[[Float]]]
 }
 
 input ProvinciaInput {
   departamento: String
   nombre: String
+  codigo: String
+  latitud: Float
+  longitud: Float
   poligono: [[[Float]]]
 }

@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Login from "../components/Login/Index";
-import Admin from "../components/Admin/Index";
+import Padron from "../components/Padron/Index";
 import NuevoPaciente from "../components/NuevoPaciente/Index";
 import { getToken } from "../helpers/Auth";
 
@@ -18,12 +18,13 @@ const Index = () => {
         <Route
           path="/"
           exact
-          render={() => (getToken() ? <Admin /> : <Login />)}
+          render={() => (getToken() ? <Padron /> : <Login />)}
         />
         <Route
           path="/monitor"
+          j
           exact
-          render={() => (getToken() ? <Admin /> : <Redirect to="/login" />)}
+          render={() => (getToken() ? <Padron /> : <Redirect to="/login" />)}
         />
         <Route
           path="/login"
@@ -31,9 +32,9 @@ const Index = () => {
           render={() => (getToken() ? <Redirect to="/" /> : <Login />)}
         />
         <Route
-          path="/admin"
+          path="/padron"
           exact
-          render={() => (getToken() ? <Admin /> : <Redirect to="/login" />)}
+          render={() => (getToken() ? <Padron /> : <Redirect to="/login" />)}
         />
         <Route
           path="/nuevo_paciente"

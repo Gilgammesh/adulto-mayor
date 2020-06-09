@@ -7,11 +7,14 @@ const schema = new Schema(
     departamento: String,
     provincia: String,
     nombre: String,
-    poligono: [[[Number, Number]]]
+    codigo: String,
+    latitud: Number,
+    longitud: Number,
+    poligono: [[[Number, Number]]],
   },
   {
     collection: "distritos",
-    timestamps: true
+    timestamps: true,
   }
 );
 

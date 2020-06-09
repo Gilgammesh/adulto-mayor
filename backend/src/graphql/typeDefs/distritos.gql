@@ -14,16 +14,23 @@ type Distrito {
   departamento: String
   provincia: String
   nombre: String
+  codigo: String
+  latitud: Float
+  longitud: Float
   poligono: [[[Float]]]
 }
 
 input DistritoFilter {
   provincia: String
+  codigo: String
 }
 
 input DistritoInput {
   departamento: String
   provincia: String
   nombre: String
+  codigo: String
+  latitud: Float
+  longitud: Float
   poligono: [[[Float]]]
 }

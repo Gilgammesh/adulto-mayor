@@ -1,0 +1,19 @@
+type Query {
+  getSeguro(_id: ID): Seguro
+  getSeguros(sortby: [SortBy]): [Seguro]
+}
+
+type Mutation {
+  createSeguro(input: SeguroInput): Boolean
+  updateSeguro(_id: ID, input: SeguroInput): Boolean
+  deleteSeguro(_id: ID): Boolean
+}
+
+type Seguro {
+  _id: ID
+  nombre: String
+}
+
+input SeguroInput {
+  nombre: String
+}
