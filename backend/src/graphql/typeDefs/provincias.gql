@@ -1,5 +1,5 @@
 type Query {
-  getProvincia(_id: ID): Provincia
+  getProvincia(filter: ProvinciaFilter): Provincia
   getProvincias(sortby: [SortBy]): [Provincia]
 }
 
@@ -18,6 +18,13 @@ type Provincia {
   longitud: Float
   poligono: [[[Float]]]
 }
+
+input ProvinciaFilter {
+  _id: ID  
+  nombre: String
+  codigo: String
+}
+
 
 input ProvinciaInput {
   departamento: String

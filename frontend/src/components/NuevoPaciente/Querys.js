@@ -26,16 +26,45 @@ export const GET_MORBILIDADES = gql`
 `;
 
 /*******************************************************************************************************/
+// Query para obtener los datos del Departamento //
+/*******************************************************************************************************/
+export const GET_DEPARTAMENTO = gql`
+  query($filter: DepartamentoFilter) {
+    getDepartamento(filter: $filter) {
+      _id
+      nombre
+      codigo
+      latitud
+      longitud
+      poligono
+    }
+  }
+`;
+
+/*******************************************************************************************************/
 // Query para obtener la lista de Provincias //
 /*******************************************************************************************************/
 export const GET_PROVINCIAS = gql`
   query($sortby: [SortBy]) {
     getProvincias(sortby: $sortby) {
       _id
-      nombre: String
-      codigo: String
-      latitud: Float
-      longitud: Float
+      nombre
+      codigo
+    }
+  }
+`;
+
+/*******************************************************************************************************/
+// Query para obtener los datos de una Provincia //
+/*******************************************************************************************************/
+export const GET_PROVINCIA = gql`
+  query($filter: ProvinciaFilter) {
+    getProvincia(filter: $filter) {
+      _id
+      nombre
+      codigo
+      latitud
+      longitud
     }
   }
 `;
@@ -47,11 +76,37 @@ export const GET_DISTRITOS = gql`
   query($filter: DistritoFilter, $sortby: [SortBy]) {
     getDistritos(filter: $filter, sortby: $sortby) {
       _id
-      provincia: String
-      nombre: String
-      codigo: String
-      latitud: Float
-      longitud: Float
+      provincia
+      nombre
+      codigo
     }
+  }
+`;
+
+/*******************************************************************************************************/
+// Query para obtener los datos de un Distrito //
+/*******************************************************************************************************/
+export const GET_DISTRITO = gql`
+  query($filter: DistritoFilter) {
+    getDistrito(filter: $filter) {
+      _id
+      provincia
+      nombre
+      codigo
+      latitud
+      longitud
+    }
+  }
+`;
+
+/*******************************************************************************************************/
+// Mutacion para crear un nuevo Paciente //
+/*******************************************************************************************************/
+export const CREATE_PACIENTE = gql`
+  mutation($input: PacienteInput) {
+    createPaciente(input: $input) {
+      estado
+      msg
+    } 
   }
 `;

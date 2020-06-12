@@ -9,12 +9,12 @@ import { buildSortFromArg } from "@entria/graphql-mongo-helpers";
 /*****************************************************************************************/
 export default {
   Query: {
-    getPaciente: async (_, { _id }, { decode }) => {
+    getPaciente: async (_, { filter }, { decode }) => {
       if (!decode) {
         throw new Error("Se necesita autorización");
       }
       try {
-        const result = await Pacientes.findOne({ _id: _id });
+        const result = await Pacientes.findOne(filter);
         return result;
       } catch (error) {
         console.log(error);

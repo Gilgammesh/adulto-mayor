@@ -11,5 +11,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginBottom: 10
+  },
+  button_: {
+    width: 60
   }
 }));

@@ -9,24 +9,26 @@ import { buildSortFromArg } from "@entria/graphql-mongo-helpers";
 /*****************************************************************************************/
 export default {
   Query: {
-    getDistrito: async (_, { _id }, { decode }) => {
+    getDistrito: async (_, { filter }, { decode }) => {
       if (!decode) {
         throw new Error("Se necesita autorización");
       }
       try {
-        const result = await Distritos.findOne({ _id: _id });
+        const result = await Distritos.findOne(filter);
         return result;
       } catch (error) {
         console.log(error);
         return null;
       }
     },
-    getDistritos: async (_, { sortby }, { decode }) => {
+    getDistritos: async (_, { filter, sortby }, { decode }) => {
       if (!decode) {
         throw new Error("Se necesita autorización");
       }
       try {
-        const result = await Distritos.find().sort(buildSortFromArg(sortby));
+        const result = await Distritos.find(filter).sort(
+          buildSortFromArg(sortby)
+        );
         return result;
       } catch (error) {
         console.log(error);

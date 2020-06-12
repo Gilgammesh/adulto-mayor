@@ -1,5 +1,5 @@
 type Query {
-  getDistrito(_id: ID): Distrito
+  getDistrito(filter: DistritoFilter): Distrito
   getDistritos(filter: DistritoFilter, sortby: [SortBy]): [Distrito]
 }
 
@@ -21,7 +21,9 @@ type Distrito {
 }
 
 input DistritoFilter {
+  _id: ID
   provincia: String
+  nombre: String
   codigo: String
 }
 

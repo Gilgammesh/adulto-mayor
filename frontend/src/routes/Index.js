@@ -8,6 +8,7 @@ import {
 import Login from "../components/Login/Index";
 import Padron from "../components/Padron/Index";
 import NuevoPaciente from "../components/NuevoPaciente/Index";
+import EditarPaciente from "../components/EditarPaciente/Index";
 import { getToken } from "../helpers/Auth";
 
 // Rutas de la App
@@ -41,6 +42,17 @@ const Index = () => {
           exact
           render={() =>
             getToken() ? <NuevoPaciente /> : <Redirect to="/login" />
+          }
+        />
+        <Route
+          path="/editar_paciente/:dni"
+          exact
+          render={({ match }) =>
+            getToken() ? (
+              <EditarPaciente match={match} />
+            ) : (
+              <Redirect to="/login" />
+            )
           }
         />
         <Route render={() => <Redirect to="/" />} />

@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"adultomayor.distritos"}],"uuid":"8e7100d20e4d49d7843771814c0e0a7e"}

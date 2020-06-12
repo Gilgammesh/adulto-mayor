@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
   appBar: {
-    background: "transparent",
+    background: "whitesmoke",
   },
   imgLogo: {
     maxWidth: "45px",

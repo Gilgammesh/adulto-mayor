@@ -1,9 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Grid, Paper, Button } from "@material-ui/core";
+import { Grid, Paper, Button, IconButton } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { teal } from "@material-ui/core/colors";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import EditIcon from "@material-ui/icons/Edit";
 import MUIDataTable from "mui-datatables";
 import { useStyles } from "./styles";
 import { useQuery } from "react-apollo";
@@ -121,6 +122,42 @@ const Index = () => {
       options: {
         filter: true,
         sort: true,
+      },
+    },
+    {
+      label: "Morbilidades",
+      name: "morbilidades",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      label: "Estado",
+      name: "estado",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      name: "Acciones",
+      options: {
+        filter: false,
+        sort: false,
+        empty: true,
+        customBodyRender: (value, tableMeta, updateValue) => {
+          return (
+            <IconButton
+              aria-label="delete"
+              onClick={() =>
+                history.push(`/editar_paciente/${tableMeta.rowData[0]}`)
+              }
+            >
+              <EditIcon />
+            </IconButton>
+          );
+        },
       },
     },
   ];

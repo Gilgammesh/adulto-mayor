@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import { teal } from "@material-ui/core/colors";
 
 export const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,12 +14,46 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: "10px",
     marginLeft: "20px",
     marginRight: "20px",
-  },
+  },  
   grid: {
     paddingTop: 20,
     paddingBottom: 30,
     flexDirection: "column",
     alignItems: "center",
+  },
+  containerHeader: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: teal["100"],
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+    padding: theme.spacing(2),
+  },
+  containerHeaderTit: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  containerHeaderBtn: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+  title: {
+    flexGrow: 1,
+    color: "#19425e",
+    fontWeight: "500",
+    fontSize: 20,
+    marginLeft: 10
+  },
+  icontitle: {
+    flexGrow: 1,
+    color: "#19425e",
+    fontWeight: "500",
+    fontSize: 24,
   },
   containerForm: {
     padding: theme.spacing(2),
@@ -44,8 +79,8 @@ export const useStyles = makeStyles((theme) => ({
   icon: {
     color: "rgba(64,105,135,0.9)",
   },
-  button: {
-    marginTop: 40,
+  icon_: {
+    color: "rgba(239,83,80,0.9)",
   },
   progress: {
     color: "#ffffff",
@@ -63,5 +98,17 @@ export const useStyles = makeStyles((theme) => ({
   },
   formControlCheck: {
     padding: 6,
+  },
+  containerMap: {
+    display: "flex",
+    width: "100%",
+    margin: "0 auto",
+    height: "600px",
+  },
+  map: {
+    flex: "1",
+  },
+  button: {
+    marginLeft: 10,
   },
 }));

@@ -1,0 +1,34 @@
+type Query {
+  getDepartamento(filter: DepartamentoFilter): Departamento
+  getDepartamentos(sortby: [SortBy]): [Departamento]
+}
+
+type Mutation {
+  createDepartamento(input: DepartamentoInput): Boolean
+  updateDepartamento(_id: ID, input: DepartamentoInput): Boolean
+  deleteDepartamento(_id: ID): Boolean
+}
+
+type Departamento {
+  _id: ID
+  nombre: String
+  codigo: String
+  latitud: Float
+  longitud: Float
+  poligono: [[[Float]]]
+}
+
+input DepartamentoFilter {
+  _id: ID  
+  nombre: String
+  codigo: String
+}
+
+
+input DepartamentoInput {
+  nombre: String
+  codigo: String
+  latitud: Float
+  longitud: Float
+  poligono: [[[Float]]]
+}

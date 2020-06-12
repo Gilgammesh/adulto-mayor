@@ -27,6 +27,7 @@ const schema = new Schema(
     estado: String,
     celulares: [String],
     contacto: String,
+    diagnostico: String,
     observaciones: [Observaciones],
   },
   {
